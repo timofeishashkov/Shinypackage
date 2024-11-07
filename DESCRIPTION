@@ -16,3 +16,8 @@ Imports:
   bslib,
   magrittr,
   shiny
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+URL: https://github.com/timofeishashkov/Shinypackage
