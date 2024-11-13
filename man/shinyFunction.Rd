@@ -4,9 +4,9 @@
 \alias{shinyFunction}
 \title{Shiny App function}
 \usage{
-shinyFunction(data = mtcars)
+shinyFunction(data = datasets::mtcars)
 
-shinyFunction(data = mtcars)
+shinyFunction(data = datasets::mtcars)
 }
 \arguments{
 \item{data}{A data frame to work with. Defaults to mtcars.}
