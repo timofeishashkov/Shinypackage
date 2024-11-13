@@ -9,13 +9,10 @@ shinyFunction <- function(){ ... }
 #'
 #' @import shiny magrittr bslib
 #'
-#' @importFrom graphics hist
-#'
 #' @examples if (interactive()) {
 #'   shinyFunction()
 #' }
-utils::globalVariables(c("mtcars"))
-utils::globalVariables(c("hist"))
+
 shinyFunction <- function(data = mtcars){
 histogramModuleUI <- function(id) {
 ns <- NS(id)
