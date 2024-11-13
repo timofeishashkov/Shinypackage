@@ -13,7 +13,7 @@ shinyFunction <- function(){ ... }
 #'   shinyFunction()
 #' }
 
-shinyFunction <- function(data = mtcars){
+shinyFunction <- function(data = datasets::mtcars){
 histogramModuleUI <- function(id) {
 ns <- NS(id)
 sidebarLayout(
@@ -41,7 +41,7 @@ histogramModuleServer <- function(id) {
   moduleServer(id, function(input, output, session) {
     # Reactive expression for the selected variable data
     x <- reactive({
-      mtcars[[input$var]]
+      datasets::mtcars[[input$var]]
     }) %>% bindEvent(input$make_graph)
 
     # Reactive expression for histogram breaks based on the number of bins
@@ -51,7 +51,7 @@ histogramModuleServer <- function(id) {
 
     # Generate the histogram plot
     output$distPlot <- renderPlot({
-      hist(
+      graphics::hist(
         x(),
         breaks = breaks(),
         col = 'darkgray',
@@ -71,7 +71,7 @@ histogramModuleServer <- function(id) {
 # Define the main UI of the app
 ui <- fluidPage(
   theme = bs_theme(bootswatch = "superhero", font_scale = 1.5),
-  titlePanel("MTCars Data"),
+  titlePanel("Mtcars Data"),
 
   # Call the module UI function within the main app UI
   histogramModuleUI("histogram1")
