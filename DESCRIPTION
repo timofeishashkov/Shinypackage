@@ -18,6 +18,8 @@ Imports:
   shiny
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 URL: https://github.com/timofeishashkov/Shinypackage
+Config/testthat/edition: 3
